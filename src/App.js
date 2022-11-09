@@ -4,7 +4,6 @@ import Letters from './components/Letters'
 import Score from './components/Score'
 import Solution from './components/Solution'
 import constants from './constants' 
-import Letter from './components/Letter'
 
 
 class App extends Component {
@@ -24,10 +23,6 @@ class App extends Component {
     return letterStatus
   }
 
-
-
-
-
   render() {
     console.log(this.state)
     
@@ -36,8 +31,7 @@ class App extends Component {
       <div className="App">
             <Score score = {this.state.score}/>
             <Solution letterStatus = {this.state.letterStatus} solution = {this.state.solution} />
-            <Letters letterStatus = {this.state.letterStatus}>
-            </Letters>
+            <Letters letterStatus = {this.state.letterStatus}/>
       </div>
     );
   }

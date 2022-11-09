@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Letter from './Letter';
-import Letters from './Letters';
 class Solution extends Component {
     constructor() {
         super();
@@ -9,13 +8,13 @@ class Solution extends Component {
     render() { 
         console.log(this.props.solution)
         let splittedWord = this.props.solution.word.split("")
-        let splittedHint = this.props.solution.hint.split("")
+        let hint = this.props.solution.hint
         return (<div>
             <div>
-                {splittedWord.map(c => <Letter char = {c}></Letter>)}
+                {splittedWord.map(c => <Letter char = {c} key = {c}/>)}
             </div>
             <div>
-                {splittedHint.map(c => <Letter char = {c}></Letter>)}
+                {hint}
             </div>
                </div>);
     }
