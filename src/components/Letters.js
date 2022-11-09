@@ -10,7 +10,7 @@ class Letters extends Component {
         console.log(splittedLetters)
         return (<div>
                     <div>Avilable Letters</div>
-                    <div>{splittedLetters.map(c => <Letter char = {c} key = {c}/>)}</div>
+                    <div>{splittedLetters.map(c => <Letter letterStatus = {this.props.letterStatus[c]} char = {c} key = {c}/>)}</div>
             </div>
         );
     }

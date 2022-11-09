@@ -5,7 +5,11 @@ class Letter extends Component {
         super();
     }
     render() { 
-        return (<span>{this.props.char}</span>);
+        console.log(this.props.letterStatus)
+        return (<span className={this.props.letterStatus ? "nonavailable-letter" : "available-letter"}
+
+        
+        >{this.props.char}</span>);
     }
 }
  
