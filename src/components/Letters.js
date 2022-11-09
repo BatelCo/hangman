@@ -1,12 +1,19 @@
 import React, { Component } from 'react';
+import Letter from './Letter';
 
 class Letters extends Component {
-    constructor(props) {
-        super(props);
+    constructor() {
+        super();
     }
     state = {  }
     render() { 
-        return (<div>letters</div>);
+        const splittedLetters = Object.keys(this.props.letterStatus)
+        console.log(splittedLetters)
+        return (<div>
+                    <div>Avilable Letters</div>
+                    <div>{splittedLetters.map(c => <Letter char = {c}></Letter>)}</div>
+            </div>
+        );
     }
 }
  

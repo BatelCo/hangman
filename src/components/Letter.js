@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 
 class Letter extends Component {
-    constructor(props) {
-        super(props);
+    constructor() {
+        super();
     }
-    state = {  }
     render() { 
-        return (<div>letter</div>);
+        return (<span>{this.props.char}</span>);
     }
 }
  

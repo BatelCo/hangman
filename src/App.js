@@ -10,9 +10,10 @@ import Letter from './components/Letter'
 class App extends Component {
   constructor() {
     super()
-    // this.state = {letterStatus :this.generateLetterStatuses()}
-    this.state = {letterStatus :{}}
-
+    this.state = {letterStatus : this.generateLetterStatuses(),
+                  solution : {"word" : "CALM",
+                            "hint" : "this is the hint"},
+                  score : 100}
   }
 
   generateLetterStatuses() {
@@ -23,14 +24,20 @@ class App extends Component {
     return letterStatus
   }
 
+
+
+
+
   render() {
+    console.log(this.state)
+    
+
     return (
       <div className="App">
-          <App>
-            <Score/><Solution letterStatus= {this.state.letterStatus} />
+            <Score score = {this.state.score}/>
+            <Solution letterStatus = {this.state.letterStatus} solution = {this.state.solution} />
             <Letters letterStatus = {this.state.letterStatus}>
             </Letters>
-          </App>
       </div>
     );
   }

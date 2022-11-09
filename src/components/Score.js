@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
 class Score extends Component {
-    constructor(props) {
-        super(props);
+    constructor() {
+        super();
     }
     state = {  }
     render() { 
-        return (<div>score</div>);
+        return (<div>{this.props.score}</div>);
     }
 }
  
