@@ -1,25 +1,40 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { Component } from 'react';
+import Letters from './components/Letters'
+import Score from './components/Score'
+import Solution from './components/Solution'
+import constants from './constants' 
+import Letter from './components/Letter'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component {
+  constructor() {
+    super()
+    // this.state = {letterStatus :this.generateLetterStatuses()}
+    this.state = {letterStatus :{}}
+
+  }
+
+  generateLetterStatuses() {
+    let letterStatus = {}
+    for (let i = constants.FIRST_ASCII_CHAR; i < constants.LAST_ASCII_CHAR; i++) {
+      letterStatus[String.fromCharCode(i)] = false
+    }
+    return letterStatus
+  }
+
+  render() {
+    return (
+      <div className="App">
+          <App>
+            <Score/><Solution letterStatus= {this.state.letterStatus} />
+            <Letters letterStatus = {this.state.letterStatus}>
+            </Letters>
+          </App>
+      </div>
+    );
+  }
 }
+
 
 export default App;
